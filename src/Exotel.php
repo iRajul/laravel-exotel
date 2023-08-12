@@ -14,12 +14,12 @@ class Exotel
 
     protected $subdomain;
 
-    public function __construct(string $sid, string $token, string $key, string $subdomain)
+    public function __construct()
     {
-        $this->sid = $sid;
-        $this->token = $token;
-        $this->key = $key;
-        $this->subdomain = $subdomain;
+        $this->sid = config('exotel.EXOTEL_SID');
+        $this->token = config('exotel.EXOTEL_TOKEN');
+        $this->key = config('exotel.EXOTEL_KEY');
+        $this->subdomain = config('exotel.EXOTEL_SUBDOMAIN');
     }
 
     /*
