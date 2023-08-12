@@ -2,7 +2,6 @@
 
 namespace Irajul\Exotel;
 
-use Irajul\Exotel\ExotelResult;
 use Illuminate\Support\Facades\Http;
 
 class Exotel
@@ -22,7 +21,7 @@ class Exotel
         $this->key = $key;
         $this->subdomain = $subdomain;
     }
-    
+
     /*
         * Outgoing call to connect two numbers
         * @param string $from
@@ -37,7 +36,7 @@ class Exotel
             'To' => $to,
             'CallerId' => $callerId,
         ];
-        // use Http post facade to make the call handle all the authentication and headers and handle error scnerio 
+        // use Http post facade to make the call handle all the authentication and headers and handle error scnerio
         try {
             $response = Http::withBasicAuth($this->key, $this->token)->post($url, $data);
 
@@ -50,6 +49,4 @@ class Exotel
             return new ExotelResult(false, null, "Exotel API Exception - {$e->getMessage()}");
         }
     }
-
-    
 }

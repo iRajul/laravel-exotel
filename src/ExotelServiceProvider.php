@@ -2,9 +2,9 @@
 
 namespace Irajul\Exotel;
 
+use Irajul\Exotel\Commands\ExotelCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Irajul\Exotel\Commands\ExotelCommand;
 
 class ExotelServiceProvider extends PackageServiceProvider
 {
