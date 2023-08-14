@@ -5,7 +5,7 @@ namespace Irajul\Exotel\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Exotel extends Model 
+class Exotel extends Model
 {
     protected $table = 'exotel_table';
 
@@ -16,7 +16,7 @@ class Exotel extends Model
         'custom_properties' => 'array',
     ];
 
-    public function model() : MorphTo
+    public function model(): MorphTo
     {
         return $this->morphTo();
     }

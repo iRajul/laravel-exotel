@@ -44,20 +44,20 @@ class Exotel
                 return [
                     'success' => true,
                     'data' => $response->json(),
-                    'error' => false
+                    'error' => false,
                 ];
             } else {
-                return  [
+                return [
                     'success' => false,
                     'data' => [],
-                    'error' => "Exotel API Error - Status: {$response->status()}"
+                    'error' => "Exotel API Error - Status: {$response->status()}",
                 ];
             }
         } catch (\Exception $e) {
-            return  [
+            return [
                 'success' => false,
                 'data' => [],
-                'error' => "Exotel API Exception - {$e->getMessage()}"
+                'error' => "Exotel API Exception - {$e->getMessage()}",
             ];
         }
     }

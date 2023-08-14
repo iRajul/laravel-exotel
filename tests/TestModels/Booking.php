@@ -1,9 +1,9 @@
 <?php
+
 namespace Irajul\Exotel\Tests\TestModels;
 
-use Irajul\Exotel\Traits\HasExotel;
-
 use Illuminate\Database\Eloquent\Model;
+use Irajul\Exotel\Traits\HasExotel;
 
 class Booking extends Model
 {

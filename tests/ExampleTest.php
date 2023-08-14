@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Http;
-use Irajul\Exotel\Tests\TestModels\Booking;
 use Irajul\Exotel\Facades\Exotel;
+use Irajul\Exotel\Tests\TestModels\Booking;
 
 it('can test', function () {
     expect(true)->toBeTrue();
@@ -53,7 +53,6 @@ it('can connect a call using Exotel', function () {
     expect($response['success'])->toBeTrue();
 });
 
-
 it('can connect a call using Exotel Model', function () {
     $body = '{
         "Call": {
@@ -91,7 +90,7 @@ it('can connect a call using Exotel Model', function () {
     // create a booking entry
     $booking = Booking::create([
     ]);
-    
+
     $booking->connectCall($from, $to, $callerId, []);
     $booking->connectCall($from, $to, $callerId, []);
 

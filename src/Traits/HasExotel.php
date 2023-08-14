@@ -1,13 +1,14 @@
 <?php
+
 namespace Irajul\Exotel\Traits;
 
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Str;
+use Irajul\Exotel\Facades\Exotel as ExotelFacade;
 use Irajul\Exotel\Models\Exotel;
 
-use Irajul\Exotel\Facades\Exotel as ExotelFacade;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
-
-trait HasExotel {
+trait HasExotel
+{
     public function callRecords(): MorphMany
     {
         return $this->morphMany(config('exotel.exotel_model'), 'model');
@@ -38,5 +39,4 @@ trait HasExotel {
         $response = ExotelFacade::connectCall($from, $to, $callerId);
         $this->record('connectCall', $from, $to, $response, $customProperties);
     }
-    
 }
