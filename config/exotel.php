@@ -22,4 +22,9 @@ return [
     * Exotel Subdomain
     */
     'EXOTEL_SUBDOMAIN' => env('EXOTEL_SUBDOMAIN', ''),
+
+    /*
+     * The fully qualified class name of the media model.
+     */
+    'exotel_model' => Irajul\Exotel\Models\Exotel::class,
 ];

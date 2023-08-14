@@ -41,12 +41,24 @@ class Exotel
             $response = Http::withBasicAuth($this->key, $this->token)->post($url, $data);
 
             if ($response->successful()) {
-                return new ExotelResult(true, $response->json());
+                return [
+                    'success' => true,
+                    'data' => $response->json(),
+                    'error' => false
+                ];
             } else {
-                return new ExotelResult(false, null, "Exotel API Error - Status: {$response->status()}");
+                return  [
+                    'success' => false,
+                    'data' => [],
+                    'error' => "Exotel API Error - Status: {$response->status()}"
+                ];
             }
         } catch (\Exception $e) {
-            return new ExotelResult(false, null, "Exotel API Exception - {$e->getMessage()}");
+            return  [
+                'success' => false,
+                'data' => [],
+                'error' => "Exotel API Exception - {$e->getMessage()}"
+            ];
         }
     }
 }

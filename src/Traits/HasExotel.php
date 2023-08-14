@@ -1,0 +1,42 @@
+<?php
+namespace Irajul\Exotel\Traits;
+
+use Illuminate\Support\Str;
+use Irajul\Exotel\Models\Exotel;
+
+use Irajul\Exotel\Facades\Exotel as ExotelFacade;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+
+trait HasExotel {
+    public function callRecords(): MorphMany
+    {
+        return $this->morphMany(config('exotel.exotel_model'), 'model');
+    }
+
+    public function record($api, $from, $to, $response = [], $customProperties = [])
+    {
+        $call = Exotel::make([
+            'from' => $from,
+            'to' => $to,
+            'uuid' => Str::uuid(),
+            'api' => $api,
+            'response' => $response,
+            'custom_properties' => $customProperties,
+        ]);
+
+        $responsible = auth()->user();
+
+        if ($responsible !== null) {
+            $call->responsible()->associate($responsible);
+        }
+
+        $this->callRecords()->save($call);
+    }
+
+    public function connectCall($from, $to, $callerId, $customProperties = [])
+    {
+        $response = ExotelFacade::connectCall($from, $to, $callerId);
+        $this->record('connectCall', $from, $to, $response, $customProperties);
+    }
+    
+}
