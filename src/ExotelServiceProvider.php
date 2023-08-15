@@ -19,7 +19,7 @@ class ExotelServiceProvider extends PackageServiceProvider
             ->name('laravel-exotel')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_exotel_table') 
+            ->hasMigration('create_exotel_table')
             ->hasCommand(ExotelCommand::class);
     }
 }
