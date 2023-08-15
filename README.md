@@ -28,10 +28,35 @@ You can publish the config file with:
 php artisan vendor:publish --tag="laravel-exotel-config"
 ```
 
-This is the contents of the published config file:
+This is the contents of the published config file published at `config/exotel.php` ::
 
 ```php
 return [
+    /*
+     * Exotel SID
+     */
+    'EXOTEL_SID' => env('EXOTEL_SID', ''),
+
+    /*
+    * Exotel Token
+    */
+
+    'EXOTEL_TOKEN' => env('EXOTEL_TOKEN', ''),
+
+    /*
+    * Exotel Key
+    */
+    'EXOTEL_KEY' => env('EXOTEL_KEY', ''),
+
+    /*
+    * Exotel Subdomain
+    */
+    'EXOTEL_SUBDOMAIN' => env('EXOTEL_SUBDOMAIN', ''),
+
+    /*
+     * The fully qualified class name of the media model.
+     */
+    'exotel_model' => Irajul\Exotel\Models\Exotel::class,
 ];
 ```
 
@@ -42,10 +67,17 @@ php artisan vendor:publish --tag="laravel-exotel-views"
 ```
 
 ## Usage
-
+This package supports two type of usage. 
+- If user wants to connect two calls without logging any activity then use below API:
 ```php
-$exotel = new Irajul\Exotel();
-echo $exotel->echoPhrase('Hello, Irajul!');
+use Irajul/Exotel/Facade/Exotel;
+    // Define the parameters
+    $from = '1234567890';
+    $to = '1234567891';
+    $callerId = '5555555555';
+
+    // Perform the connectCall operation
+    $response = Exotel::connectCall($from, $to, $callerId);
 ```
 
 ## Testing
