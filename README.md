@@ -18,14 +18,14 @@ composer require irajul/laravel-exotel
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-exotel-migrations"
+php artisan vendor:publish --tag="exotel-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-exotel-config"
+php artisan vendor:publish --tag="exotel-config"
 ```
 
 This is the contents of the published config file published at `config/exotel.php` ::
