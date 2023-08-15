@@ -1,4 +1,4 @@
-# Laravel package to interaact with exotel APIs (unofficial)
+# Laravel package to interact with exotel APIs (unofficial)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/irajul/laravel-exotel.svg?style=flat-square)](https://packagist.org/packages/irajul/laravel-exotel)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/irajul/laravel-exotel/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/irajul/laravel-exotel/actions?query=workflow%3Arun-tests+branch%3Amain)
