@@ -30,7 +30,7 @@ class Exotel
     */
     public function connectCall(string $from, string $to, string $callerId)
     {
-        $url = "https://{$this->subdomain}.exotel.com/v1/Accounts/{$this->sid}/Calls/connect.json";
+        $url = "https://{$this->key}:{$this->token}@{$this->subdomain}.exotel.com/v1/Accounts/{$this->sid}/Calls/connect.json";
         $data = [
             'From' => $from,
             'To' => $to,
@@ -38,7 +38,7 @@ class Exotel
         ];
         // use Http post facade to make the call handle all the authentication and headers and handle error scnerio
         try {
-            $response = Http::withBasicAuth($this->key, $this->token)->post($url, $data);
+            $response = Http::asForm()->post($url, $data);
 
             if ($response->successful()) {
                 return [
