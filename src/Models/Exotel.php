@@ -21,7 +21,7 @@ class Exotel extends Model
         return $this->morphTo();
     }
 
-    public function responsible() : MorphTo
+    public function responsible(): MorphTo
     {
         return $this->morphTo();
     }
