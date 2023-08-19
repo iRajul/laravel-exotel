@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-exotel` will be documented in this file.
 
+## 1.0.4 - 2023-08-19
+
+- Fixed callConnext API when calling using Model
+
+**Full Changelog**: https://github.com/iRajul/laravel-exotel/compare/1.0.3...1.0.4
+
 ## 1.0.3 - 2023-08-15
 
 **Full Changelog**: https://github.com/iRajul/laravel-exotel/compare/1.0.2...1.0.3
