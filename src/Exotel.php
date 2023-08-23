@@ -18,7 +18,7 @@ class Exotel
 
     public function __construct()
     {
-        
+
     }
 
     /*
@@ -29,7 +29,7 @@ class Exotel
     */
     public function connectCall(string $from, string $to, string $config_name = 'default')
     {
-        $configs = config("exotel.exotel_configs");
+        $configs = config('exotel.exotel_configs');
 
         collect($configs)->each(function ($config) use ($config_name) {
             if ($config['name'] == $config_name) {
