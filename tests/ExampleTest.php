@@ -43,10 +43,9 @@ it('can connect a call using Exotel', function () {
     // Define the test parameters
     $from = '1234567890';
     $to = '9876543210';
-    $callerId = '5555555555';
 
     // Perform the connectCall operation
-    $response = Exotel::connectCall($from, $to, $callerId);
+    $response = Exotel::connectCall($from, $to);
     //dd($response);
 
     // Assert that the response was successful
@@ -85,14 +84,13 @@ it('can connect a call using Exotel Model', function () {
     // Define the test parameters
     $from = '1234567890';
     $to = '9876543210';
-    $callerId = '5555555555';
 
     // create a booking entry
     $booking = Booking::create([
     ]);
 
-    $booking->connectCall($from, $to, $callerId, []);
-    $booking->connectCall($from, $to, $callerId, []);
+    $booking->connectCall($from, $to, 'default', []);
+    $booking->connectCall($from, $to, 'default', []);
 
     // Assert that the call record was saved
     $this->assertCount(1, Booking::all());

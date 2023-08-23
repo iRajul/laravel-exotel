@@ -34,9 +34,9 @@ trait HasExotel
         $this->callRecords()->save($call);
     }
 
-    public function connectCall($from, $to, $callerId, $customProperties = [])
+    public function connectCall($from, $to, $config_name = 'default', $customProperties = [])
     {
-        $response = ExotelFacade::connectCall($from, $to, $callerId);
+        $response = ExotelFacade::connectCall($from, $to);
         $this->record('connectCall', $from, $to, $response, $customProperties);
     }
 }

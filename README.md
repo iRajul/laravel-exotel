@@ -32,26 +32,37 @@ This is the contents of the published config file published at `config/exotel.ph
 
 ```php
 return [
-    /*
-     * Exotel SID
-     */
-    'EXOTEL_SID' => env('EXOTEL_SID', ''),
 
-    /*
-    * Exotel Token
-    */
+    'exotel_configs' => [
+        [
+            'name' => 'default',
+            /*
+            * Exotel SID
+            */
+            'exotel_sid' => env('EXOTEL_SID', ''),
 
-    'EXOTEL_TOKEN' => env('EXOTEL_TOKEN', ''),
+            /*
+            * Exotel Token
+            */
 
-    /*
-    * Exotel Key
-    */
-    'EXOTEL_KEY' => env('EXOTEL_KEY', ''),
+            'exotel_token' => env('EXOTEL_TOKEN', ''),
 
-    /*
-    * Exotel Subdomain
-    */
-    'EXOTEL_SUBDOMAIN' => env('EXOTEL_SUBDOMAIN', ''),
+            /*
+            * Exotel Key
+            */
+            'exotel_key' => env('EXOTEL_KEY', ''),
+
+            /*
+            * Exotel Subdomain
+            */
+            'exotel_subdomain' => env('EXOTEL_SUBDOMAIN', ''),
+
+            /*
+            * Exotel Caller ID
+            */
+            'exotel_caller_id' => env('EXOTEL_CALLER_ID', ''),
+        ],
+    ],
 
     /*
      * The fully qualified class name of the media model.
@@ -70,14 +81,13 @@ php artisan vendor:publish --tag="laravel-exotel-views"
 This package supports two type of usage. 
 - If user wants to connect two calls without logging any activity then use below API:
 ```php
-use Irajul/Exotel/Facade/Exotel;
+    use Irajul/Exotel/Facade/Exotel;
     // Define the parameters
     $from = '1234567890';
     $to = '1234567891';
-    $callerId = '5555555555';
 
     // Perform the connectCall operation
-    $response = Exotel::connectCall($from, $to, $callerId);
+    $response = Exotel::connectCall($from, $to);
 ```
 
 ## Testing

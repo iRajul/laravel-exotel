@@ -2,26 +2,37 @@
 
 // config for Irajul/Exotel
 return [
-    /*
-     * Exotel SID
-     */
-    'EXOTEL_SID' => env('EXOTEL_SID', ''),
 
-    /*
-    * Exotel Token
-    */
+    'exotel_configs' => [
+        [
+            'name' => 'default',
+            /*
+            * Exotel SID
+            */
+            'exotel_sid' => env('EXOTEL_SID', ''),
 
-    'EXOTEL_TOKEN' => env('EXOTEL_TOKEN', ''),
+            /*
+            * Exotel Token
+            */
 
-    /*
-    * Exotel Key
-    */
-    'EXOTEL_KEY' => env('EXOTEL_KEY', ''),
+            'exotel_token' => env('EXOTEL_TOKEN', ''),
 
-    /*
-    * Exotel Subdomain
-    */
-    'EXOTEL_SUBDOMAIN' => env('EXOTEL_SUBDOMAIN', ''),
+            /*
+            * Exotel Key
+            */
+            'exotel_key' => env('EXOTEL_KEY', ''),
+
+            /*
+            * Exotel Subdomain
+            */
+            'exotel_subdomain' => env('EXOTEL_SUBDOMAIN', ''),
+
+            /*
+            * Exotel Caller ID
+            */
+            'exotel_caller_id' => env('EXOTEL_CALLER_ID', ''),
+        ],
+    ],
 
     /*
      * The fully qualified class name of the media model.
