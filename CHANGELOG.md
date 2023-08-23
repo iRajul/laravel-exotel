@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-exotel` will be documented in this file.
 
+## 2.0.0 - 2023-08-23
+
+**Full Changelog**: https://github.com/iRajul/laravel-exotel/compare/1.0.5...2.0.0
+
 ## 1.0.5 - 2023-08-19
 
 - Fixed post request to exotel server.
